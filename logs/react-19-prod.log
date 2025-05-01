@@ -1,0 +1,41 @@
+--initial render--
+parent getSnapshot (counter: 1)
+parent render (counter: 1)
+child getSnapshot (counter: 1)
+child render (counter: 1)
+child effect mount
+child effect setup
+child subscribe
+child getSnapshot (counter: 1)
+parent effect mount
+parent effect setup
+parent subscribe
+parent getSnapshot (counter: 1)
+--dispatch (counter: 2, shouldChildRender: true)--
+child onDispatch
+child getSnapshot (counter: 2)
+parent onDispatch
+parent getSnapshot (counter: 2)
+parent getSnapshot (counter: 2)
+parent render (counter: 2)
+child getSnapshot (counter: 2)
+child render (counter: 2)
+child effect teardown
+parent effect teardown
+child effect setup
+child getSnapshot (counter: 2)
+parent effect setup
+parent getSnapshot (counter: 2)
+--dispatch (counter: 3, shouldChildRender: false)--
+child onDispatch
+child getSnapshot (counter: 3)
+parent onDispatch
+parent getSnapshot (counter: 3)
+parent getSnapshot (counter: 3)
+parent render (counter: 3)
+child effect unmout
+child effect teardown
+child unsubscribe
+parent effect teardown
+parent effect setup
+parent getSnapshot (counter: 3)
